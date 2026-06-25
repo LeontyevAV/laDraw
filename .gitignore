@@ -1,0 +1,7 @@
+node_modules/
+dist/
+backend/venv/
+backend/*.egg-info/
+__pycache__/
+*.pyc
+.scripts/

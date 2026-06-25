@@ -1,0 +1,280 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+
+.toolbar-group {
+  display: flex;
+  gap: 4px;
+}
+
+.toolbar-group + .toolbar-group {
+  padding-left: 12px;
+  border-left: 1px solid #ddd;
+}
+
+.toolbar button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.toolbar button.active {
+  background: #0066cc;
+  color: #fff;
+  border-color: #0066cc;
+}
+
+.toolbar button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.kbd {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-left: 4px;
+}
+
+.main-area {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.canvas-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9ecef;
+  position: relative;
+}
+
+.canvas-container canvas {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.mode-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+  z-index: 10;
+  user-select: none;
+}
+
+.properties-panel {
+  width: 280px;
+  padding: 16px;
+  background: #fff;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.properties-panel h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.properties-panel label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #555;
+}
+
+.properties-panel input {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.property-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #333;
+  margin-top: 8px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  min-width: 480px;
+  max-width: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.modal h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 100px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.project-list li:hover {
+  background: #f8f9fa;
+}
+
+.project-list .info {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-list .info .title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.project-list .info .sub {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.project-list .actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.btn-load {
+  background: #0066cc !important;
+  color: #fff !important;
+  border-color: #0066cc !important;
+}
+
+.btn-delete {
+  background: #dc3545 !important;
+  color: #fff !important;
+  border-color: #dc3545 !important;
+}
+
+.empty-state {
+  text-align: center;
+  color: #999;
+  padding: 32px;
+  font-size: 14px;
+}
+
+.loading {
+  text-align: center;
+  color: #888;
+  padding: 24px;
+}
+
+.coord-section h4 {
+  margin: 12px 0 6px;
+  font-size: 13px;
+}
+
+.coord-table {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+}
+
+.coord-header,
+.coord-row {
+  display: grid;
+  grid-template-columns: 24px 1fr 1fr;
+  gap: 4px;
+  align-items: center;
+}
+
+.coord-header {
+  font-weight: 600;
+  color: #666;
+  padding: 2px 0;
+}
+
+.coord-row input {
+  width: 100%;
+  padding: 3px 4px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.coord-row input:focus {
+  border-color: #0066cc;
+  outline: none;
+}
+
+.coord-idx {
+  text-align: center;
+  color: #888;
+  font-size: 11px;
+}
